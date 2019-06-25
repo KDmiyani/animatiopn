@@ -3,6 +3,8 @@ package com.example.a1893713.weight_demo;
 import android.animation.ObjectAnimator;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.view.animation.Animation;
+import android.view.animation.AnimationUtils;
 import android.widget.ImageView;
 import android.widget.RatingBar;
 import android.widget.TextView;
@@ -16,7 +18,17 @@ ImageView img;
 
         img = findViewById( R.id.img);
 
-        ObjectAnimator animator = ObjectAnimator.ofFloat(img,"rotationX",)
+       /* ObjectAnimator animator = ObjectAnimator.ofFloat(img,"rotationY",0,0f,360f);
+        animator.setDuration(3000);
+        animator.setRepeatCount(Animation.INFINITE);
+        animator.start();
+*/
+
+       Animation ani = AnimationUtils.loadAnimation(getApplicationContext(),R.anim.rotate);
+       ani.setDuration(3000);
+
+
+       img.setAnimation(ani);
 
     }
 }
